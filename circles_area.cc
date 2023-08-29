@@ -42,7 +42,7 @@ int main() {
     double sum = 0.;
     for (auto &c : circles) {
         cin >> c.x >> c.y >> c.r;
-		sum += c.r;
+	sum += c.r;
     }
 	
     double RECT_SIDE = 1e-5/(10.*sum); // 2*pi*sqrt(2)*sum < epsilon = 1e-5
