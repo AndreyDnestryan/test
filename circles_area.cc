@@ -30,8 +30,8 @@ bool Circle::is_point_inside(double px, double py) {
 }
 
 int main() {
-    const double RECT_SIDE = 1e-4; // размер ячейки
-    const double RECT_AREA = sqr(RECT_SIDE); // прощадь ячейки
+    //const double RECT_SIDE = 1e-4; // размер ячейки
+    //const double RECT_AREA = sqr(RECT_SIDE); // прощадь ячейки
     
     uint N;
     vector<Circle> circles;
@@ -39,10 +39,14 @@ int main() {
     
     cin >> N; // считываем входные данные
     circles.resize(N);
-    
+    double sum = 0.;
     for (auto &c : circles) {
         cin >> c.x >> c.y >> c.r;
+		sum += c.r;
     }
+	
+    double RECT_SIDE = 1e-5/(10.*sum); // 2*pi*sqrt(2)*sum < epsilon = 1e-5
+	double RECT_AREA = sqr(RECT_SIDE);
     
     double min_x = circles[0].min_x(), min_y = circles[0].min_y();
     double max_x = circles[0].max_x(), max_y = circles[0].max_y();
