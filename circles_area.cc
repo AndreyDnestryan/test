@@ -46,7 +46,7 @@ int main() {
     }
 	
     double RECT_SIDE = 1e-5/(10.*sum); // 2*pi*sqrt(2)*sum < epsilon = 1e-5
-	double RECT_AREA = sqr(RECT_SIDE);
+    double RECT_AREA = sqr(RECT_SIDE);
     
     double min_x = circles[0].min_x(), min_y = circles[0].min_y();
     double max_x = circles[0].max_x(), max_y = circles[0].max_y();
